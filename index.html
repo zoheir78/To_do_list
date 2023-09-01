@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .menu
+        {
+            width: 100%;
+            height: 150px;
+            background-color:rgb(255, 0, 0);
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+        .title
+        {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;         
+        
+        }
+        .title h1
+        {
+            color: white;
+        }
+        .input_menu
+        {
+            padding: 10px 30px 30px 30px;
+            display: grid;
+            grid-template-columns: 80% 20%;
+            height: 50px;
+        }
+        #input
+        {
+            padding: 10px;
+            font-size: 25px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .add_button
+        {
+            font-size: 25px;
+            border: 2px solid green;
+            border-radius: 10px;
+        }
+        .add_button:hover 
+        {
+            cursor: pointer;
+        }
+        .new_container
+        {
+            padding: 10px;
+            font-size: 25px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 80% 20%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="title">
+            <h1> My To Do List </h1>
+        </div>
+        <div class="input_menu">
+            <input type="text" placeholder="Title..." id="input">
+            <button onclick="add_element()" class="add_button" >Add</button> 
+        </div>
+
+    </div>
+    <div id="list"></div>
+    
+</body>
+<script>
+
+let new_list = [];
+
+function add_element ()
+    {
+        
+        var x = document.getElementById("input").value
+        var y = document.createElement("div")
+        y.className = "new_container"
+        y.innerText = x
+
+        var remove_but = document.createElement("button")
+        remove_but.innerText = "Delite"
+        y.appendChild(remove_but)
+        
+        if(x ==='')
+        {alert("You must writ something")
+        }else{
+            document.getElementById("list").appendChild(y)
+            new_list.push(y)
+             }
+    }
+
+    function removeFromCart(ind) {
+        new_list.splice(ind, 1);
+    // updateCartDisplay();
+    // updateCartTotal();
+}
+</script>
+</html>
