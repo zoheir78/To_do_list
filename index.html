@@ -94,6 +94,7 @@ function add_element ()
 
         var remove_but = document.createElement("button")
         remove_but.innerText = "Delite"
+        remove_but.Onclick = removeFromList();
         y.appendChild(remove_but)
         
         if(x ==='')
@@ -104,7 +105,7 @@ function add_element ()
              }
     }
 
-    function removeFromCart(ind) {
+    function removeFromList(ind) {
         new_list.splice(ind, 1);
     // updateCartDisplay();
     // updateCartTotal();
